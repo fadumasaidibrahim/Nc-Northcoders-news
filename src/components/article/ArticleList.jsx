@@ -25,9 +25,8 @@ export default function ArticleList() {
   }
   if (isLoading) return <p> Loading....</p>;
   return (
-    <section className="homepage_article_list">
+    <section>
       {articles.map(({ article_id, title, topic, author, body, votes }) => {
-        console.log(articles);
         return (
           <ArticleCard
             key={article_id}

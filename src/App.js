@@ -1,17 +1,18 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { React, useState, useEffect } from 'react';
-import ArticleCard from './components/article/ArticleCard';
-import Header from './components/header/Header';
-import ArticleList from './components/article/ArticleList';
 import './App.css';
+import { React } from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import ArticleList from './components/article/ArticleList';
+import TopicList from './components/topic/TopicList';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
+        <Navbar />
         <Routes>
           <Route path="/" element={<ArticleList />} />
+          <Route path="/articles/:topic" element={<TopicList />} />
         </Routes>
       </div>
     </BrowserRouter>
