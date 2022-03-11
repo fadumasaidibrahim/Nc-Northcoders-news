@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import * as api from '../api';
+import * as api from '../../utils/api';
 
 export default function ArticleVote({ article }) {
   const [votes, setVotes] = useState(0);
@@ -12,7 +12,7 @@ export default function ArticleVote({ article }) {
     setError(null);
     api.amendVoteCount(article_id, num).catch(() => {
       setVotes((currVotes) => currVotes - num * -1);
-      setError("Sorry, that didn't work, please try again");
+      setError('error');
     });
   };
 

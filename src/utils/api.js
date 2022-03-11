@@ -21,3 +21,10 @@ export const getSingleArticle = (article_id) => {
     return res.data.article;
   });
 };
+
+export const amendVoteCount = (article_id, inc_votes) => {
+  return newsApi.patch(`articles/${article_id}`, { inc_votes }).then((res) => {
+    console.log(res.data.article);
+    return res.data.article;
+  });
+};

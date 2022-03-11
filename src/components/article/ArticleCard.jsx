@@ -6,14 +6,12 @@ export default function ArticleCard({
   topic,
   author,
   body,
-  votes,
 }) {
   return (
     <article>
       <h3>{title}</h3>
       <h4>Article author - {author}</h4>
       <h5>Topic - {topic}</h5>
-      <p>Votes - {votes}</p>
     </article>
   );
 }

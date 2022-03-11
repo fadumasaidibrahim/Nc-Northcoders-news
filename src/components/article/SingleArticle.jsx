@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as api from '../../utils/api';
 import ArticleCard from '../article/ArticleCard.jsx';
+import ArticleVote from './ArticleVote';
 export default function SingleArticle() {
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -13,6 +14,7 @@ export default function SingleArticle() {
     api
       .getSingleArticle(article_id)
       .then((articles) => {
+        console.log(articles);
         setArticle(articles);
         setIsLoading(false);
         setError(null);
@@ -27,14 +29,17 @@ export default function SingleArticle() {
   }
   if (isLoading) return <p> Loading....</p>;
   return (
-    <ArticleCard
-      key={article_id}
-      article_id={article_id}
-      title={article.title}
-      topic={article.topic}
-      author={article.author}
-      body={article.body}
-      votes={article.votes}
-    />
+    <div>
+      <ArticleCard
+        key={article_id}
+        article_id={article_id}
+        title={article.title}
+        topic={article.topic}
+        author={article.author}
+        body={article.body}
+      />
+
+      <ArticleVote article={article} />
+    </div>
   );
 }
