@@ -11,12 +11,10 @@ export default function ArticleVote({ article }) {
     setVotes((currVotes) => currVotes + num);
     setError(null);
     api.amendVoteCount(article_id, num).catch(() => {
-      setVotes((currVotes) => currVotes - num * -1);
+      setVotes((currVotes) => currVotes - num);
       setError('error');
     });
   };
-
-  if (error) return <p>{error}</p>;
 
   return (
     <div className="voteButton">
@@ -37,6 +35,7 @@ export default function ArticleVote({ article }) {
       >
         -
       </button>
+      {error ? <p>{error}</p> : null}
     </div>
   );
 }
