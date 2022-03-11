@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as api from '../../utils/api';
 import ArticleCard from '../article/ArticleCard.jsx';
+import CommentList from '../comment/CommentList.jsx';
 import ArticleVote from './ArticleVote';
 export default function SingleArticle() {
   const [article, setArticle] = useState({});
@@ -40,6 +41,8 @@ export default function SingleArticle() {
       />
 
       <ArticleVote article={article} />
+
+      <CommentList article={article} />
     </div>
   );
 }

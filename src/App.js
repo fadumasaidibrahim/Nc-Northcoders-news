@@ -5,6 +5,7 @@ import ArticleList from './components/article/ArticleList';
 import TopicList from './components/topic/TopicList';
 import Navbar from './components/Navbar';
 import SingleArticle from './components/article/SingleArticle';
+import UserLogin from './components/users/UserLogin';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<ArticleList />} />
           <Route path="/articles/:topic" element={<TopicList />} />
           <Route path="/article/:article_id" element={<SingleArticle />} />
+          <Route path="/login" element={<UserLogin />} />
         </Routes>
       </div>
     </BrowserRouter>

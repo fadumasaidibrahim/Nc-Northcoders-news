@@ -28,3 +28,15 @@ export const amendVoteCount = (article_id, inc_votes) => {
     return res.data.article;
   });
 };
+
+export const getComments = (article_id) => {
+  return newsApi.get(`/articles/${article_id}/comments`).then((res) => {
+    return res.data.comments;
+  });
+};
+
+export const getUsers = () => {
+  return newsApi.get('/users').then((res) => {
+    return res.data.users;
+  });
+};
