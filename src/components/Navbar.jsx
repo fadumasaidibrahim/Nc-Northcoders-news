@@ -9,7 +9,7 @@ export default function Navbar() {
     });
   }, []);
   return (
-    <div>
+    <div className="articleList">
       <h1>NC News</h1>
       {topic.map(({ slug }) => {
         return (
