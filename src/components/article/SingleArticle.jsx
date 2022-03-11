@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import * as api from '../../utils/api';
 import ArticleCard from '../article/ArticleCard.jsx';
 export default function SingleArticle() {
-  const [article, setArticle] = useState([]);
+  const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { article_id } = useParams();
@@ -27,20 +27,14 @@ export default function SingleArticle() {
   }
   if (isLoading) return <p> Loading....</p>;
   return (
-    <section>
-      {article.map(({ article_id, title, topic, author, body, votes }) => {
-        return (
-          <ArticleCard
-            key={article_id}
-            article_id={article_id}
-            title={title}
-            topic={topic}
-            author={author}
-            body={body}
-            votes={votes}
-          />
-        );
-      })}
-    </section>
+    <ArticleCard
+      key={article_id}
+      article_id={article_id}
+      title={article.title}
+      topic={article.topic}
+      author={article.author}
+      body={article.body}
+      votes={article.votes}
+    />
   );
 }

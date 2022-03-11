@@ -16,8 +16,8 @@ export const getTopics = () => {
   });
 };
 
-export const getSingleArticle = (id) => {
-  return newsApi.get(`articles/${id}`).then((res) => {
+export const getSingleArticle = (article_id) => {
+  return newsApi.get(`articles/${article_id}`).then((res) => {
     return res.data.article;
   });
 };
