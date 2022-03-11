@@ -13,7 +13,7 @@ export default function Navbar() {
       <h1>NC News</h1>
       {topic.map(({ slug }) => {
         return (
-          <ul>
+          <ul key={slug}>
             <li>
               <Link to={`/articles/${slug}`}>{slug}</Link>
             </li>

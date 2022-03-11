@@ -16,8 +16,15 @@ export const getTopics = () => {
   });
 };
 
-export const getSingleArticle = (id) => {
-  return newsApi.get(`articles/${id}`).then((res) => {
+export const getSingleArticle = (article_id) => {
+  return newsApi.get(`articles/${article_id}`).then((res) => {
+    return res.data.article;
+  });
+};
+
+export const amendVoteCount = (article_id, inc_votes) => {
+  return newsApi.patch(`articles/${article_id}`, { inc_votes }).then((res) => {
+    console.log(res.data.article);
     return res.data.article;
   });
 };

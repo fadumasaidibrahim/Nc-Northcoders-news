@@ -23,7 +23,6 @@ export default function TopicList() {
           }
         });
         setArticle(topicArticles);
-        console.log(article);
 
         setIsLoading(false);
       })
