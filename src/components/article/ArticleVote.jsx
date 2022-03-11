@@ -19,7 +19,7 @@ export default function ArticleVote({ article }) {
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
+    <div className="voteButton">
       Votes {article.votes + votes} <br></br>
       <button
         disabled={votes === 1}
